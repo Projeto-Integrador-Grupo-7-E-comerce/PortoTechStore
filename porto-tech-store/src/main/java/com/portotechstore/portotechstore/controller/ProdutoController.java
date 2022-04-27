@@ -60,7 +60,8 @@ public class ProdutoController {
 	public ResponseEntity<ProdutoModel> put (@RequestBody ProdutoModel produto){
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(produto));
 	}
-	
+
+	//Deleta produto por id
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable long id) {
 		repository.deleteById(id);
