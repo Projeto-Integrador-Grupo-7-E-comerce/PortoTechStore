@@ -38,7 +38,7 @@ public class ProdutoController {
 	}
 			
 	@GetMapping("/{id}") // qual metodo http vou enviar a api - nesse caso o getmapping com parametro do id, para executar esse metodo
-	public ResponseEntity<ProdutoModel> GetById(@PathVariable long id){ // @PathVariable transforma o parametro id em uma variavel para ser usada em (return repository.findById(id))
+	public ResponseEntity<ProdutoModel> GetByIdProduto(@PathVariable long id){ // @PathVariable transforma o parametro id em uma variavel para ser usada em (return repository.findById(id))
 
 		return repository.findById(id)
 				///retorno de resposta se encontra ok, se nao encontra notFound
@@ -48,7 +48,7 @@ public class ProdutoController {
 	
 	@GetMapping("/nome/{nome}")
 	public ResponseEntity<List<ProdutoModel>> GetByCadastro(@PathVariable String nome){ //
-		return ResponseEntity.ok(repository.findAllByNomeContainingIgnoreCase(nome));
+		return ResponseEntity.ok(repository.findAllByNomeProdutoContainingIgnoreCase(nome));
 	}
 	
 	@PostMapping

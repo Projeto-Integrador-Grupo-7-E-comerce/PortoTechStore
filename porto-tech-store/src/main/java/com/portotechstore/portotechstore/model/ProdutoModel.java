@@ -15,83 +15,83 @@ import javax.validation.constraints.Size;
 @Entity // Indica que essa classe será uma entidade
 @Table(name = "produtos") // Nome da tabela no banco de dados
 public class ProdutoModel {
-
+	
+	//teste commit
 	// Campos da Tabela: ID,NOME,PRECO_VENDA,PRECO_CUSTO,QTDE_ESTOQUE,DATA_CADASTRO
 
 	// Id do Produto
 	@Id // Chave primária
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // Gerador automático de Ids (Ex: 1,2,3,4,5...)
-	private long id;
+	private long idProduto;
 
 	// Nome Produtos
 	@NotNull // Obrigatório
 	@Size(min = 3, max = 30) // Qtde de caracteres no nome
-	private String nome;
+	private String nomeProduto;
 
 	// Preço de Venda
 	@NotNull // ??????????? É apenas isso mesmo?
-	private double preco_venda;
+	private double precoVendaProduto;
 
 	// Preço de custo
 	@NotNull // ??????????? É apenas isso mesmo?
-	private double preco_custo;
+	private double precoCustoProduto;
 
 	// Qtde Estoque
 	@NotNull // ??????????? É apenas isso mesmo?
-	private int qtde_estoque;
+	private int qtdeEstoqueProduto;
 
 	// Data de Cadastro
 	@Temporal(TemporalType.TIMESTAMP) //Informando que o tipo de dado é um tipo date timestamp
-	private Date date = new java.sql.Date(System.currentTimeMillis());// Captura a data exata que o dado foi inserido
-	
+	private Date createdDateProduto = new java.sql.Date(System.currentTimeMillis());// Captura a data exata que o dado foi inserido
 
-	public long getId() {
-		return id;
+	public long getIdProduto() {
+		return idProduto;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public void setIdProduto(long idProduto) {
+		this.idProduto = idProduto;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getNomeProduto() {
+		return nomeProduto;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNomeProduto(String nomeProduto) {
+		this.nomeProduto = nomeProduto;
 	}
 
-	public double getPreco_venda() {
-		return preco_venda;
+	public double getPrecoVendaProduto() {
+		return precoVendaProduto;
 	}
 
-	public void setPreco_venda(double preco_venda) {
-		this.preco_venda = preco_venda;
+	public void setPrecoVendaProduto(double precoVendaProduto) {
+		this.precoVendaProduto = precoVendaProduto;
 	}
 
-	public double getPreco_custo() {
-		return preco_custo;
+	public double getPrecoCustoProduto() {
+		return precoCustoProduto;
 	}
 
-	public void setPreco_custo(double preco_custo) {
-		this.preco_custo = preco_custo;
+	public void setPrecoCustoProduto(double precoCustoProduto) {
+		this.precoCustoProduto = precoCustoProduto;
 	}
 
-	public int getQtde_estoque() {
-		return qtde_estoque;
+	public int getQtdeEstoqueProduto() {
+		return qtdeEstoqueProduto;
 	}
 
-	public void setQtde_estoque(int qtde_estoque) {
-		this.qtde_estoque = qtde_estoque;
+	public void setQtdeEstoqueProduto(int qtdeEstoqueProduto) {
+		this.qtdeEstoqueProduto = qtdeEstoqueProduto;
 	}
 
-	public Date getDate() {
-		return date;
+	public Date getCreatedDateProduto() {
+		return createdDateProduto;
 	}
 
-	public void setDate(Date date) {
-		this.date = date;
+	public void setCreatedDateProduto(Date createdDateProduto) {
+		this.createdDateProduto = createdDateProduto;
 	}
-
+		
 	
 }
