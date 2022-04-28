@@ -43,7 +43,8 @@ public class ClienteController {
 		}
 		
 		@GetMapping("/nome/{nome}")
-		public ResponseEntity<List<ClienteModel>> GetByCadastro(@PathVariable String nome){ //
+		public ResponseEntity<List<ClienteModel>> GetByNome(@PathVariable String nome){ //
+			
 			return ResponseEntity.ok(repository.findAllByNomeClienteContainingIgnoreCase(nome));
 		}
 		
