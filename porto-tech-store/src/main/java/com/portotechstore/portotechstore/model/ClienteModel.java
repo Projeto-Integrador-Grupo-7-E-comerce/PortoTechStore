@@ -47,6 +47,7 @@ public class ClienteModel {
 	@DateTimeFormat(pattern = "yyyy-mm-dd")
 	private LocalDate dataNascimentoCliente;
 	
+	
 	@NotNull
 	@Size(min=2, max=60)
 	private String enderecoCliente;
@@ -118,6 +119,7 @@ public class ClienteModel {
 		this.celularCliente = celularCliente;
 	}
 
+	
 	public LocalDate getDataNascimentoCliente() {
 		return dataNascimentoCliente;
 	}
