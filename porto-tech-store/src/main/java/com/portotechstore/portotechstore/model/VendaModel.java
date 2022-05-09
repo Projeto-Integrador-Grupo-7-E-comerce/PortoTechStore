@@ -33,10 +33,10 @@ public class VendaModel {
 	
 	
 	private double valorUnitarioProduto;
-	@NotNull
-	private double descontoProduto;
 	
-	@NotNull
+	private Double descontoProduto;
+	
+	
 	private double total;
 	
 	@NotNull
@@ -92,13 +92,6 @@ public class VendaModel {
 		this.valorUnitarioProduto = valorUnitarioProduto;
 	}
 
-	public double getDescontoProduto() {
-		return descontoProduto;
-	}
-
-	public void setDescontoProduto(double descontoProduto) {
-		this.descontoProduto = descontoProduto;
-	}
 
 	public double getTotal() {
 		return total;
@@ -138,6 +131,14 @@ public class VendaModel {
 
 	public void setCreatedDateProduto(Date createdDateProduto) {
 		this.createdDateProduto = createdDateProduto;
+	}
+
+	public Double getDescontoProduto() {
+		return descontoProduto;
+	}
+
+	public void setDescontoProduto(Double descontoProduto) {
+		this.descontoProduto = descontoProduto;
 	}
 	
 }
