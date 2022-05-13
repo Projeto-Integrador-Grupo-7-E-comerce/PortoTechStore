@@ -46,7 +46,7 @@ public class ProdutoModel {
 	private Date createdDateProduto = new java.sql.Date(System.currentTimeMillis());// Captura a data exata que o dado foi inserido
 
 	public long getIdProduto() {
-		return idProduto;
+		return this.idProduto;
 	}
 
 	public void setIdProduto(long idProduto) {

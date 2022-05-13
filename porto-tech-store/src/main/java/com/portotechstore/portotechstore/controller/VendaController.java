@@ -18,6 +18,7 @@ import com.portotechstore.portotechstore.model.VendaModel;
 import com.portotechstore.portotechstore.repository.ClienteRepository;
 import com.portotechstore.portotechstore.repository.ProdutoRepository;
 import com.portotechstore.portotechstore.repository.VendaRepository;
+import com.portotechstore.portotechstore.service.VendaService;
 
 @RestController
 @RequestMapping("/vendas")
@@ -30,6 +31,9 @@ public class VendaController {
 	ProdutoRepository produtoRepository;
 	@Autowired
 	ClienteRepository clienteRepository;
+	
+	@Autowired
+	VendaService vendaService;
 	
 	@GetMapping
 	public ResponseEntity<List<VendaModel>>GetAll(){
@@ -45,26 +49,8 @@ public class VendaController {
 	
 	@PostMapping()
 	public ResponseEntity<VendaModel>post(@RequestBody VendaModel venda){
-		//Produto vendido
-		long idProduto = venda.getProduto().getIdProduto();
-		String nomeProduto = produtoRepository.getById(idProduto).getNomeProduto();
-		venda.setNomeProduto(nomeProduto);
-		double precoVendaProduto = produtoRepository.getById(idProduto).getPrecoVendaProduto();
-		venda.setValorUnitarioProduto(precoVendaProduto);
-		int qtdeVendida = venda.getQtdeProduto();
 		
-		
-		if(venda.getDescontoProduto() == null) {
-			venda.setDescontoProduto(0.0);
-		}
-		venda.setTotal((qtdeVendida * precoVendaProduto ) - venda.getDescontoProduto() );
-		
-		//Cliente
-		long idCliente = venda.getCliente().getIdCliente();
-		String nomeCliente = clienteRepository.getById(idCliente).getNomeCliente();
-		venda.setNomeCliente(nomeCliente);
-		
-		return ResponseEntity.status(HttpStatus.CREATED).body(vendaRepository.save(venda));
+		return ResponseEntity.status(HttpStatus.CREATED).body(vendaService.saveVenda(venda));
 	}
 	
 	@PutMapping
