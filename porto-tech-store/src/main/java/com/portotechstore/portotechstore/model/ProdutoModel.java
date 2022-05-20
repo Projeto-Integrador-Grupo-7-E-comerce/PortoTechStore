@@ -15,7 +15,7 @@ import javax.validation.constraints.Size;
 @Entity // Indica que essa classe será uma entidade
 @Table(name = "produtos") // Nome da tabela no banco de dados
 public class ProdutoModel {
-	
+	 
 	//teste commit
 	// Campos da Tabela: ID,NOME,PRECO_VENDA,PRECO_CUSTO,QTDE_ESTOQUE,DATA_CADASTRO
 
