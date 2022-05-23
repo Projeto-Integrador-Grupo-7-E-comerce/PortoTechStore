@@ -15,12 +15,15 @@ public class VendaService {
 	ProdutoRepository produtoRepository;
 	
 	@Autowired
+	ProdutoService produtoService;
+	
+	@Autowired
 	ClienteRepository clienteRepository;
 	
 	@Autowired
 	VendaRepository vendaRepository;
 	
-	public VendaModel saveVenda(VendaModel venda){
+	public VendaModel criarVenda(VendaModel venda){
 		ProdutoModel produto = produtoRepository.getById(venda.getProduto().getIdProduto());
 		ClienteModel cliente = clienteRepository.getById(venda.getCliente().getIdCliente());
 		//Nome cliente e produto
@@ -31,7 +34,7 @@ public class VendaService {
 		double precoVendaProduto = produto.getPrecoVendaProduto();
 		venda.setTotal(calcularTotalVendido(precoVendaProduto,venda.getQtdeProduto(),venda.getDescontoProduto()));
 		//Baixando produto
-		baixaProduto(produto, venda.getQtdeProduto());
+		produtoService.addOrRemoveProduto(produto, venda.getQtdeProduto(), false);
 		
 		return vendaRepository.save(venda);
 		
@@ -46,15 +49,7 @@ public class VendaService {
 		return (precoVendaProduto * qtdeVendida) - desconto;
 	}
 	
-	public void baixaProduto(ProdutoModel produto, int qtdeBaixa) {
-		
-		//if (qtdeBaixa > produto.getQtdeEstoqueProduto()){
-		//      return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
-		//}
-		
-		produto.setQtdeEstoqueProduto(produto.getQtdeEstoqueProduto() - qtdeBaixa);
-		produtoRepository.save(produto);
-		
-	}
+	//Criar no service do produto
+	
 	
 }

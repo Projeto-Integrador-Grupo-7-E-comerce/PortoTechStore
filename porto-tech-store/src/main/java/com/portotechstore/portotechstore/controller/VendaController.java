@@ -50,7 +50,7 @@ public class VendaController {
 	@PostMapping()
 	public ResponseEntity<VendaModel>post(@RequestBody VendaModel venda){
 		
-		return ResponseEntity.status(HttpStatus.CREATED).body(vendaService.saveVenda(venda));
+		return ResponseEntity.status(HttpStatus.CREATED).body(vendaService.criarVenda(venda));
 	}
 	
 	@PutMapping

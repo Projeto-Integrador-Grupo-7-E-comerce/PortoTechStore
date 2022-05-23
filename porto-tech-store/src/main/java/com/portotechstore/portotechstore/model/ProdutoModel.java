@@ -10,6 +10,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.PositiveOrZero;
 import javax.validation.constraints.Size;
 
 @Entity // Indica que essa classe será uma entidade
@@ -31,14 +32,17 @@ public class ProdutoModel {
 
 	// Preço de Venda
 	@NotNull // ??????????? É apenas isso mesmo?
+	@PositiveOrZero
 	private double precoVendaProduto;
 
 	// Preço de custo
-	@NotNull // ??????????? É apenas isso mesmo?
+	@NotNull
+	@PositiveOrZero
 	private double precoCustoProduto;
 
 	// Qtde Estoque
-	@NotNull // ??????????? É apenas isso mesmo?
+	@NotNull
+	@PositiveOrZero
 	private int qtdeEstoqueProduto;
 
 	// Data de Cadastro
@@ -54,7 +58,7 @@ public class ProdutoModel {
 	}
 
 	public String getNomeProduto() {
-		return nomeProduto;
+		return this.nomeProduto;
 	}
 
 	public void setNomeProduto(String nomeProduto) {
@@ -62,7 +66,7 @@ public class ProdutoModel {
 	}
 
 	public double getPrecoVendaProduto() {
-		return precoVendaProduto;
+		return this.precoVendaProduto;
 	}
 
 	public void setPrecoVendaProduto(double precoVendaProduto) {
@@ -70,7 +74,7 @@ public class ProdutoModel {
 	}
 
 	public double getPrecoCustoProduto() {
-		return precoCustoProduto;
+		return this.precoCustoProduto;
 	}
 
 	public void setPrecoCustoProduto(double precoCustoProduto) {
@@ -78,7 +82,7 @@ public class ProdutoModel {
 	}
 
 	public int getQtdeEstoqueProduto() {
-		return qtdeEstoqueProduto;
+		return this.qtdeEstoqueProduto;
 	}
 
 	public void setQtdeEstoqueProduto(int qtdeEstoqueProduto) {
@@ -86,7 +90,7 @@ public class ProdutoModel {
 	}
 
 	public Date getCreatedDateProduto() {
-		return createdDateProduto;
+		return this.createdDateProduto;
 	}
 
 	public void setCreatedDateProduto(Date createdDateProduto) {

@@ -12,6 +12,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 
 @Entity
 @Table(name ="vendas")
@@ -29,6 +30,7 @@ public class VendaModel {
 	private String nomeProduto;
 	
 	@NotNull
+	@Positive
 	private int qtdeProduto;
 	
 	
