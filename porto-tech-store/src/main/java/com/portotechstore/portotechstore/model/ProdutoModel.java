@@ -44,6 +44,9 @@ public class ProdutoModel {
 	@NotNull
 	@PositiveOrZero
 	private int qtdeEstoqueProduto;
+	
+	@NotNull
+	private String urlFotoProduto;
 
 	// Data de Cadastro
 	@Temporal(TemporalType.TIMESTAMP) //Informando que o tipo de dado é um tipo date timestamp
@@ -96,6 +99,13 @@ public class ProdutoModel {
 	public void setCreatedDateProduto(Date createdDateProduto) {
 		this.createdDateProduto = createdDateProduto;
 	}
-		
+
+	public String getUrlFotoProduto() {
+		return urlFotoProduto;
+	}
+
+	public void setUrlFotoProduto(String urlFotoProduto) {
+		this.urlFotoProduto = urlFotoProduto;
+	}
 	
 }
