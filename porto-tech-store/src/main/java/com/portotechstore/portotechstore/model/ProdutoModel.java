@@ -51,6 +51,9 @@ public class ProdutoModel {
 	@NotNull
 	private String categoriaProduto;
 	
+	@NotNull
+	
+	private String marcaProduto;
 	// Data de Cadastro
 	@Temporal(TemporalType.TIMESTAMP) //Informando que o tipo de dado é um tipo date timestamp
 	private Date createdDateProduto = new java.sql.Date(System.currentTimeMillis());// Captura a data exata que o dado foi inserido
@@ -117,6 +120,14 @@ public class ProdutoModel {
 
 	public void setCategoriaProduto(String categoriaProduto) {
 		this.categoriaProduto = categoriaProduto;
+	}
+
+	public String getMarcaProduto() {
+		return marcaProduto;
+	}
+
+	public void setMarcaProduto(String marcaProduto) {
+		this.marcaProduto = marcaProduto;
 	}
 	
 }
