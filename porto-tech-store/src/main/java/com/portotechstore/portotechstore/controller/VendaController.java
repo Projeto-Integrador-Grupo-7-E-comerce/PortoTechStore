@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.portotechstore.portotechstore.model.VendaModel;
-import com.portotechstore.portotechstore.repository.ClienteRepository;
 import com.portotechstore.portotechstore.repository.ProdutoRepository;
 import com.portotechstore.portotechstore.repository.VendaRepository;
 import com.portotechstore.portotechstore.service.VendaService;
@@ -29,8 +28,6 @@ public class VendaController {
 	VendaRepository vendaRepository;
 	@Autowired
 	ProdutoRepository produtoRepository;
-	@Autowired
-	ClienteRepository clienteRepository;
 	
 	@Autowired
 	VendaService vendaService;
@@ -41,7 +38,7 @@ public class VendaController {
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<VendaModel>GetByIdCliente(@PathVariable long id){
+	public ResponseEntity<VendaModel>GetByIdUsuario(@PathVariable long id){
 		return vendaRepository.findById(id)
 				.map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.notFound().build());

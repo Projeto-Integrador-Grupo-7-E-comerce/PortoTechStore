@@ -47,9 +47,9 @@ public class VendaModel {
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "id_cliente")
-	private ClienteModel cliente;
+	private UsuarioModel usuario;
 	
-	private String nomeCliente;
+	private String nomeUsuario;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date createdDateProduto = new java.sql.Date(System.currentTimeMillis());
@@ -94,6 +94,13 @@ public class VendaModel {
 		this.valorUnitarioProduto = valorUnitarioProduto;
 	}
 
+	public Double getDescontoProduto() {
+		return descontoProduto;
+	}
+
+	public void setDescontoProduto(Double descontoProduto) {
+		this.descontoProduto = descontoProduto;
+	}
 
 	public double getTotal() {
 		return total;
@@ -111,20 +118,20 @@ public class VendaModel {
 		this.formaPagamento = formaPagamento;
 	}
 
-	public ClienteModel getCliente() {
-		return cliente;
+	public UsuarioModel getUsuario() {
+		return usuario;
 	}
 
-	public void setCliente(ClienteModel cliente) {
-		this.cliente = cliente;
+	public void setUsuario(UsuarioModel usuario) {
+		this.usuario = usuario;
 	}
 
-	public String getNomeCliente() {
-		return nomeCliente;
+	public String getNomeUsuario() {
+		return nomeUsuario;
 	}
 
-	public void setNomeCliente(String nomeCliente) {
-		this.nomeCliente = nomeCliente;
+	public void setNomeUsuario(String nomeUsuario) {
+		this.nomeUsuario = nomeUsuario;
 	}
 
 	public Date getCreatedDateProduto() {
@@ -134,13 +141,4 @@ public class VendaModel {
 	public void setCreatedDateProduto(Date createdDateProduto) {
 		this.createdDateProduto = createdDateProduto;
 	}
-
-	public Double getDescontoProduto() {
-		return descontoProduto;
-	}
-
-	public void setDescontoProduto(Double descontoProduto) {
-		this.descontoProduto = descontoProduto;
-	}
-	
 }

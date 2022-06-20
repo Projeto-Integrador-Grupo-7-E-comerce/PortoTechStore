@@ -2,12 +2,11 @@ package com.portotechstore.portotechstore.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.portotechstore.portotechstore.model.ClienteModel;
 import com.portotechstore.portotechstore.model.ProdutoModel;
+import com.portotechstore.portotechstore.model.UsuarioModel;
 import com.portotechstore.portotechstore.model.VendaModel;
-import com.portotechstore.portotechstore.repository.ClienteRepository;
 import com.portotechstore.portotechstore.repository.ProdutoRepository;
+import com.portotechstore.portotechstore.repository.UsuarioRepository;
 import com.portotechstore.portotechstore.repository.VendaRepository;
 @Service
 public class VendaService {
@@ -18,16 +17,16 @@ public class VendaService {
 	ProdutoService produtoService;
 	
 	@Autowired
-	ClienteRepository clienteRepository;
+	UsuarioRepository usuarioRepository;
 	
 	@Autowired
 	VendaRepository vendaRepository;
 	
 	public VendaModel criarVenda(VendaModel venda){
 		ProdutoModel produto = produtoRepository.getById(venda.getProduto().getIdProduto());
-		ClienteModel cliente = clienteRepository.getById(venda.getCliente().getIdCliente());
+		UsuarioModel usuario = usuarioRepository.getById(venda.getUsuario().getId());
 		//Nome cliente e produto
-		venda.setNomeCliente(cliente.getNomeCliente());
+		venda.setNomeUsuario(usuario.getNome());
 		venda.setNomeProduto(produto.getNomeProduto());
 		venda.setValorUnitarioProduto(produto.getPrecoVendaProduto());
 		//Total vendido
