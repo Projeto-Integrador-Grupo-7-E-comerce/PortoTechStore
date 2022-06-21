@@ -1,12 +1,15 @@
 package com.portotechstore.portotechstore.model;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -66,6 +69,9 @@ public class UsuarioModel {
 	@Size(min=8,max=8)
 	private String cep;
 	
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date createdDateUser = new java.sql.Date(System.currentTimeMillis());
+
 	@NotNull
 	private boolean isAdmin;
 
