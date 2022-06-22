@@ -73,18 +73,28 @@ public class UsuarioModel {
 	private Date createdDateUser = new java.sql.Date(System.currentTimeMillis());
 
 	@NotNull
-	private boolean isAdmin;
+	private Boolean isAdmin;
+	
+	public Boolean getIsAdmin() {
+		return isAdmin;
+	}
+
+
+	public void setIsAdmin(Boolean isAdmin) {
+		this.isAdmin = isAdmin;
+	}
+
 
 	public long getId() {
 		return id;
 	}
 
-
+	
 	public void setId(long id) {
 		this.id = id;
 	}
 
-
+	
 	public String getNome() {
 		return nome;
 	}
