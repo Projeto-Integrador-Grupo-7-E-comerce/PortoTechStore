@@ -36,15 +36,9 @@ public class UsuarioModel {
 	private String password;
 	@Size(min=11,max=11)
 	private String cpf;	
-		
-	@Size(min=7,max=40)
-	private String email;
-	
+
 	@Size(min=11)
 	private String celular;	
-	
-	@DateTimeFormat(pattern = "yyyy-mm-dd")
-	private LocalDate dataNascimento;
 	
 	@Size(min=2, max=60)
 	private String endereco;
@@ -145,14 +139,6 @@ public class UsuarioModel {
 	}
 
 
-	public String getEmail() {
-		return email;
-	}
-
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
 
 
 	public String getCelular() {
@@ -162,16 +148,6 @@ public class UsuarioModel {
 
 	public void setCelular(String celular) {
 		this.celular = celular;
-	}
-
-
-	public LocalDate getDataNascimento() {
-		return dataNascimento;
-	}
-
-
-	public void setDataNascimento(LocalDate dataNascimento) {
-		this.dataNascimento = dataNascimento;
 	}
 
 

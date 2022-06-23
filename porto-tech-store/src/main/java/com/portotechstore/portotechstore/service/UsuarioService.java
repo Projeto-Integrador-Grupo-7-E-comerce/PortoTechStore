@@ -181,7 +181,7 @@ public class UsuarioService {
 				 * A Classe controladora checará se deu tudo certo nesta operação e retornará
 				 * o status.
 				 */
-				System.out.println("Logado");
+				System.out.println("Logadoooooooooooooo");
 				return usuarioLogin;
 
 			}
