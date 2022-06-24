@@ -26,8 +26,7 @@ public class ProdutoModel {
 	private long idProduto;
 
 	// Nome Produtos
-	@NotNull // Obrigatório
-	@Size(min = 3, max = 30) // Qtde de caracteres no nome
+	@NotNull // Obrigatório // Qtde de caracteres no nome
 	private String nomeProduto;
 
 	// Preço de Venda
@@ -35,10 +34,9 @@ public class ProdutoModel {
 	@PositiveOrZero
 	private double precoVendaProduto;
 
-	// Preço de custo
+	//descricao
 	@NotNull
-	@PositiveOrZero
-	private double precoCustoProduto;
+	private String descricaoProduto;
 
 	// Qtde Estoque
 	@NotNull
@@ -82,14 +80,6 @@ public class ProdutoModel {
 		this.precoVendaProduto = precoVendaProduto;
 	}
 
-	public double getPrecoCustoProduto() {
-		return this.precoCustoProduto;
-	}
-
-	public void setPrecoCustoProduto(double precoCustoProduto) {
-		this.precoCustoProduto = precoCustoProduto;
-	}
-
 	public int getQtdeEstoqueProduto() {
 		return this.qtdeEstoqueProduto;
 	}
@@ -128,6 +118,14 @@ public class ProdutoModel {
 
 	public void setMarcaProduto(String marcaProduto) {
 		this.marcaProduto = marcaProduto;
+	}
+
+	public String getDescricaoProduto() {
+		return descricaoProduto;
+	}
+
+	public void setDescricaoProduto(String descricaoProduto) {
+		this.descricaoProduto = descricaoProduto;
 	}
 	
 }

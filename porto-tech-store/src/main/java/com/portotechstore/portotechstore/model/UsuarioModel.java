@@ -24,11 +24,11 @@ public class UsuarioModel {
 	private long id;
 	
 	@NotNull
-	@Size(min = 2 , max = 15)
+	@Size(min = 2 , max = 30)
 	private String nome;
 	
 	@NotNull
-	@Size(min = 2 , max = 15)
+	@Size(min = 2 , max = 30)
 	private String username;
 	
 	@NotNull
