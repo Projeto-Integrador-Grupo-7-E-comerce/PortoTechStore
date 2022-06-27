@@ -175,7 +175,13 @@ public class UsuarioService {
 				usuarioLogin.get().setIsAdmin(usuario.get().getIsAdmin());
 				usuarioLogin.get().setToken(gerarBasicToken(usuarioLogin.get().getUsername(), usuarioLogin.get().getPassword()));
 				usuarioLogin.get().setPassword(usuario.get().getPassword());
-
+				usuarioLogin.get().setEndereco(usuario.get().getEndereco());
+				usuarioLogin.get().setNumero(usuario.get().getNumero());
+				usuarioLogin.get().setComplemento(usuario.get().getComplemento());
+				usuarioLogin.get().setBairro(usuario.get().getBairro());
+				usuarioLogin.get().setCidade(usuario.get().getCidade());
+				usuarioLogin.get().setEstado(usuario.get().getEstado());
+				usuarioLogin.get().setCep(usuario.get().getCep());
 				/**
 				 * Retorna o objeto usarioLogin atualizado para a classe UsuarioController.
 				 * A Classe controladora checará se deu tudo certo nesta operação e retornará
