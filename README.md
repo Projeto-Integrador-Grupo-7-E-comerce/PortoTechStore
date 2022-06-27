@@ -11,6 +11,8 @@ E-Commerce: Projeto integrador do Grupo 7 sugerido pela Digital House e Porto.
   
 # Desenvolver um sistema de e-commerce.
 
+##PortoTech Store - A sua loja de artigos eletrônicos.
+
 ```
 
 ## 🛠 Tecnologias
@@ -37,5 +39,5 @@ Técnologias utilizadas:
 ## :mortar_board: Autores
 
 <h4 align="center">
-Feito por <a href="https://www.linkedin.com/in/renata-castrorp/" target="_blank">Renata</a>, <a href="https://www.linkedin.com/in/ssgheitor/">Heitor</a>, <a href="https://www.linkedin.com/in/mariana-roncaratti-84860b180/">Mariana</a>, <a href="" target="_blank">Rafael</a>,<a href="https://www.linkedin.com/in/patriciarogai/">Patricia</a> e <a href="https://www.linkedin.com/in/lucas-soares-515477121/">Lucas</a>. 
+Feito por <a href="https://www.linkedin.com/in/renata-castrorp/" target="_blank">Renata</a>, <a href="https://www.linkedin.com/in/ssgheitor/">Heitor</a>, <a href="https://www.linkedin.com/in/mariana-roncaratti-84860b180/">Mariana</a>, <a href="" target="_blank">Rafael</a> e <a href="https://www.linkedin.com/in/patriciarogai/">Patricia</a>. 
 </h4>
