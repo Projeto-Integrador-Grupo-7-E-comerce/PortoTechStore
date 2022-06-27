@@ -15,8 +15,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 
 @Entity
-@Table(name ="vendas")
-public class VendaModel {
+@Table(name ="vendas_item")
+public class VendaItemModel {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,7 +26,8 @@ public class VendaModel {
 	@ManyToOne
 	@JoinColumn(name = "id_produto")
 	private ProdutoModel produto;
-	
+	@NotNull
+	private Long idCarrinho;
 	private String nomeProduto;
 	
 	@NotNull
@@ -141,4 +142,14 @@ public class VendaModel {
 	public void setCreatedDateProduto(Date createdDateProduto) {
 		this.createdDateProduto = createdDateProduto;
 	}
+
+	public Long getIdCarrinho() {
+		return idCarrinho;
+	}
+
+	public void setIdCarrinho(Long idCarrinho) {
+		this.idCarrinho = idCarrinho;
+	}
+	
+	
 }

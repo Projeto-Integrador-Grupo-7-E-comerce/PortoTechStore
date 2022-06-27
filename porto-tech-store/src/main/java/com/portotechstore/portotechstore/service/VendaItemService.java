@@ -4,12 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.portotechstore.portotechstore.model.ProdutoModel;
 import com.portotechstore.portotechstore.model.UsuarioModel;
-import com.portotechstore.portotechstore.model.VendaModel;
+import com.portotechstore.portotechstore.model.VendaItemModel;
 import com.portotechstore.portotechstore.repository.ProdutoRepository;
 import com.portotechstore.portotechstore.repository.UsuarioRepository;
-import com.portotechstore.portotechstore.repository.VendaRepository;
+import com.portotechstore.portotechstore.repository.VendaItemRepository;
 @Service
-public class VendaService {
+public class VendaItemService {
 	@Autowired
 	ProdutoRepository produtoRepository;
 	
@@ -20,9 +20,9 @@ public class VendaService {
 	UsuarioRepository usuarioRepository;
 	
 	@Autowired
-	VendaRepository vendaRepository;
+	VendaItemRepository vendaRepository;
 	
-	public VendaModel criarVenda(VendaModel venda){
+	public VendaItemModel criarVenda(VendaItemModel venda){
 		ProdutoModel produto = produtoRepository.getById(venda.getProduto().getIdProduto());
 		UsuarioModel usuario = usuarioRepository.getById(venda.getUsuario().getId());
 		//Nome cliente e produto
