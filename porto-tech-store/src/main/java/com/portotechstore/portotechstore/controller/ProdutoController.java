@@ -31,6 +31,21 @@ public class ProdutoController {
 	
 	
 	//Criação dos métodos GET,POST,PUT e DELETE
+	
+
+	
+	@GetMapping("/marca/{marca}")
+	public ResponseEntity<List<ProdutoModel>> findAllByMarcaContainingIgnoreCase(@PathVariable String marca){ //
+		return ResponseEntity.ok(repository.findAllByCategoriaContainingIgnoreCase(marca));
+	}
+	
+	@GetMapping("/categoria/{categoria}")
+	public ResponseEntity<List<ProdutoModel>> findAllByCategoriaContainingIgnoreCase(@PathVariable String categoria){ //
+		return ResponseEntity.ok(repository.findAllByCategoriaContainingIgnoreCase(categoria));
+	}
+	
+	
+	
 	@GetMapping//toda vez que tiver uma requisicao da api /produtos, verificara o metodo que chama, se for o GET disparara este metodo
 	public ResponseEntity<List<ProdutoModel>>GetAll()
 	{
