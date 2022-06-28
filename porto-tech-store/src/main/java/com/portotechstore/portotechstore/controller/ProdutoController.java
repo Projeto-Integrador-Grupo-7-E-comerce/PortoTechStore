@@ -35,13 +35,13 @@ public class ProdutoController {
 
 	
 	@GetMapping("/marca/{marca}")
-	public ResponseEntity<List<ProdutoModel>> findAllByMarcaContainingIgnoreCase(@PathVariable String marca){ //
-		return ResponseEntity.ok(repository.findAllByCategoriaContainingIgnoreCase(marca));
+	public ResponseEntity<List<ProdutoModel>> findAllByMarcaProdutoContainingIgnoreCase(@PathVariable String marca){ //
+		return ResponseEntity.ok(repository.findAllByMarcaProdutoContainingIgnoreCase(marca));
 	}
 	
 	@GetMapping("/categoria/{categoria}")
-	public ResponseEntity<List<ProdutoModel>> findAllByCategoriaContainingIgnoreCase(@PathVariable String categoria){ //
-		return ResponseEntity.ok(repository.findAllByCategoriaContainingIgnoreCase(categoria));
+	public ResponseEntity<List<ProdutoModel>> findAllByCategoriaProdutoContainingIgnoreCase(@PathVariable String categoria){ //
+		return ResponseEntity.ok(repository.findAllByCategoriaProdutoContainingIgnoreCase(categoria));
 	}
 	
 	
