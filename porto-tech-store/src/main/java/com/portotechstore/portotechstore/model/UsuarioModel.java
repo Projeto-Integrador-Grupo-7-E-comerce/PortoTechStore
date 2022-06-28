@@ -36,27 +36,27 @@ public class UsuarioModel {
 	@Size(min=11)
 	private String celular;	
 	
-	@Size(min=2, max=60)
+	@Size(max=60)
 	private String endereco;
 
-	@Size(min=1, max=8)
+	@Size(max=8)
 	private String numero;
 
-	@Size(min=1,max=30)
+	
 	private String complemento;
 	
 
-	@Size(min=1,max=20)
+	@Size(max=20)
 	private String bairro;
 
-	@Size(min=2,max=30)
+	@Size(max=30)
 	private String cidade;
 	
-	@Size(min=2,max=2)
+	@Size(max=2)
 	private String estado;
 		
 
-	@Size(min=8,max=8)
+	@Size(max=8)
 	private String cep;
 	
 	@Temporal(TemporalType.TIMESTAMP)
