@@ -182,6 +182,7 @@ public class UsuarioService {
 				usuarioLogin.get().setCidade(usuario.get().getCidade());
 				usuarioLogin.get().setEstado(usuario.get().getEstado());
 				usuarioLogin.get().setCep(usuario.get().getCep());
+				usuarioLogin.get().setNome(usuario.get().getNome());
 				/**
 				 * Retorna o objeto usarioLogin atualizado para a classe UsuarioController.
 				 * A Classe controladora checará se deu tudo certo nesta operação e retornará

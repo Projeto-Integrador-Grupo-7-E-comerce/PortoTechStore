@@ -5,7 +5,7 @@ public class UsuarioLogin {
 	private long id;
 	
 	private String username;
-	
+	private String nome;
 	private String password;
 	private String token;
 	private Boolean isAdmin;
@@ -26,6 +26,14 @@ public class UsuarioLogin {
 	private String cep;
 	
 	
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
 	public String getEndereco() {
 		return endereco;
 	}
