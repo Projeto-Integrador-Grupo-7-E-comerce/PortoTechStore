@@ -12,6 +12,7 @@ E-Commerce: Projeto integrador do Grupo 7 sugerido pela Digital House e Porto.
 # Desenvolver um sistema de e-commerce.
 
 ##PortoTech Store - A sua loja de artigos eletrônicos.
+teste
 
 ```
 
