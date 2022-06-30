@@ -15,8 +15,11 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.portotechstore.portotechstore.model.UsuarioModel;
 import com.portotechstore.portotechstore.model.VendaItemModel;
 import com.portotechstore.portotechstore.repository.ProdutoRepository;
+import com.portotechstore.portotechstore.repository.UsuarioRepository;
 import com.portotechstore.portotechstore.repository.VendaItemRepository;
 import com.portotechstore.portotechstore.service.VendaItemService;
 
@@ -31,6 +34,9 @@ public class VendaItemController {
 	ProdutoRepository produtoRepository;
 	
 	@Autowired
+	UsuarioRepository usuarioRepository;
+	
+	@Autowired
 	VendaItemService vendaService;
 	
 	@GetMapping
@@ -38,12 +44,14 @@ public class VendaItemController {
 		return ResponseEntity.ok(vendaRepository.findAll());
 	}
 	
-	@GetMapping("/{id}")
-	public ResponseEntity<VendaItemModel>GetByIdUsuario(@PathVariable long id){
-		return vendaRepository.findById(id)
-				.map(resp -> ResponseEntity.ok(resp))
-				.orElse(ResponseEntity.notFound().build());
+	@GetMapping("/usuario/{id}")
+	public ResponseEntity<List<VendaItemModel>> GetAllVendasByIdUsuario(@PathVariable long id){
+		Optional<UsuarioModel> user = usuarioRepository.findById(id);
+		
+		return ResponseEntity.ok(vendaRepository.findAllByUsuarioOrderByCreatedDateProdutoDesc(user.get()));
+		
 	}
+	
 	@GetMapping("/ultimocarrinho")
 	public ResponseEntity<Optional<Long>> getLastIdCarrinho(){
 		return ResponseEntity.ok(vendaRepository.findFirstByOrderByIdCarrinhoDesc());
