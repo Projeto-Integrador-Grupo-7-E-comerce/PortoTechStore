@@ -30,7 +30,6 @@ public class UsuarioModel {
 	@NotNull
 	@Size(min = 8)
 	private String password;
-	@Size(min=11)
 	private String cpf;	
 
 	@Size(min=11)
@@ -45,11 +44,10 @@ public class UsuarioModel {
 	
 	private String complemento;
 	
-
-	@Size(max=30)
+	@Size(max=100)
 	private String bairro;
 
-	@Size(max=30)
+	@Size(max=100)
 	private String cidade;
 	
 	@Size(max=2)
