@@ -20,11 +20,11 @@ public class UsuarioModel {
 	private long id;
 	
 	@NotNull
-	@Size(min = 1 , max = 40)
+	@Size(min = 1 , max = 100)
 	private String nome;
 	
 	@NotNull
-	@Size(min = 1 , max = 40)
+	@Size(min = 1 , max = 100)
 	private String username;
 	
 	@NotNull
@@ -41,7 +41,7 @@ public class UsuarioModel {
 	@Size(max=8)
 	private String numero;
 
-	
+	@Size(max=100)
 	private String complemento;
 	
 	@Size(max=100)
