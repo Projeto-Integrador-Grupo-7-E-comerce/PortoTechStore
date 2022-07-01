@@ -15,10 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.portotechstore.portotechstore.model.ProdutoModel;
 import com.portotechstore.portotechstore.model.UsuarioLogin;
 import com.portotechstore.portotechstore.model.UsuarioModel;
-import com.portotechstore.portotechstore.model.VendaItemModel;
 import com.portotechstore.portotechstore.repository.UsuarioRepository;
 import com.portotechstore.portotechstore.service.UsuarioService;
 
