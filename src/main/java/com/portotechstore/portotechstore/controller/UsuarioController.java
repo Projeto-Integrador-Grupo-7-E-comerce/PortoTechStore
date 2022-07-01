@@ -14,10 +14,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 import com.portotechstore.portotechstore.model.UsuarioLogin;
 import com.portotechstore.portotechstore.model.UsuarioModel;
 import com.portotechstore.portotechstore.repository.UsuarioRepository;
