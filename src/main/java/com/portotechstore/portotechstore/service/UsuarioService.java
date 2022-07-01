@@ -50,9 +50,12 @@ public class UsuarioService {
 	 *  empty -> Retorna uma instância de Optional vazia.
 	 */
 	public Optional<UsuarioModel> CadastrarUsuario(UsuarioModel usuario) {
-
-		if (usuarioRepository.findByUsername(usuario.getUsername()).isPresent()) {
-			
+		System.out.println(usuario.getUsername());
+		Optional<UsuarioModel> user = usuarioRepository.findByUsernameContainingIgnoreCase(usuario.getUsername());
+		System.out.println(user.get().getUsername());
+		
+		if (usuarioRepository.findByUsernameContainingIgnoreCase(usuario.getUsername()).isPresent()) {
+			System.out.println("ja existe");
 			return Optional.empty();
 		}
 		
@@ -69,7 +72,7 @@ public class UsuarioService {
 		 * of​ -> Retorna um Optional com o valor fornecido, mas o valor não pode ser nulo. 
 		 * Se não tiver certeza de que o valor não é nulo use ofNullable.
 		 */
-		System.out.println(usuario);
+		System.out.println(usuario.getNome());
 		return Optional.of(usuarioRepository.save(usuario));
 	
 	}
@@ -92,7 +95,7 @@ public class UsuarioService {
 			/**
 			 * Cria um Objeto Optional com o resultado do método findById
 			 */
-			Optional<UsuarioModel> buscaUsuario = usuarioRepository.findByUsername(usuario.getUsername());
+			Optional<UsuarioModel> buscaUsuario = usuarioRepository.findByUsernameContainingIgnoreCase(usuario.getUsername());
 			
 			/**
 			 * Se o Usuário existir no Banco de dados e o Id do Usuário encontrado no Banco for 
@@ -149,7 +152,7 @@ public class UsuarioService {
 		 * do Objeto encpsulado.
 		 * 
 		 */
-		Optional<UsuarioModel> usuario = usuarioRepository.findByUsername(usuarioLogin.get().getUsername());
+		Optional<UsuarioModel> usuario = usuarioRepository.findByUsernameContainingIgnoreCase(usuarioLogin.get().getUsername());
 
 		/**
 		 * Checa se o usuario existe
