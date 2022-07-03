@@ -16,7 +16,7 @@ Link para o Front-end: https://github.com/Projeto-Integrador-Grupo-7-E-comerce/F
 # Desenvolver um sistema de e-commerce.
 
 ##PortoTech Store - A sua loja de artigos eletrônicos.
-teste
+
 
 ```
 
