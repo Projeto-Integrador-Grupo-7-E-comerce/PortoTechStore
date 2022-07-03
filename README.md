@@ -1,6 +1,8 @@
 # 
 ## 💻 Sobre
 E-Commerce: Projeto integrador do Grupo 7 sugerido pela Digital House e Porto.
+Nosso site: https://portotechstore.netlify.app
+Link para o Front-end: https://github.com/Projeto-Integrador-Grupo-7-E-comerce/Front---PortoTech-Store
 
 🚧 Em desenvolvimento ✔️ 🚧
 
