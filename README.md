@@ -6,7 +6,7 @@ Nosso site: https://portotechstore.netlify.app
 
 Link para o Front-end: https://github.com/Projeto-Integrador-Grupo-7-E-comerce/Front---PortoTech-Store
 
-🚧 Em desenvolvimento ✔️ 🚧
+🚧 Desenvolvido ✔️ 🚧
 
 
 ## 🎯 Objetivo
